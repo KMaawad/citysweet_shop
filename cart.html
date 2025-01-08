@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <!-- basic -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- mobile metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <!-- site metas -->
+      <title>About</title>
+      <meta name="keywords" content="">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <!-- bootstrap css -->
+      <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+      <!-- style css -->
+      <link rel="stylesheet" type="text/css" href="css/style.css">
+      <!-- Responsive-->
+      <link rel="stylesheet" href="css/responsive.css">
+      <!-- fevicon -->
+      <link rel="icon" href="images/fevicon.png" type="image/gif" />
+      <!-- Scrollbar Custom CSS -->
+      <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+      <!-- Tweaks for older IEs-->
+      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+      <!-- owl stylesheets --> 
+      <link rel="stylesheet" href="css/owl.carousel.min.css">
+      <link rel="stylesheet" href="css/owl.theme.default.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+      <title>Shopping Cart</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+   
+ <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        .containers {
+            max-width: 1200px;
+            margin: 20px auto;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #007bff;
+        }
+
+        /* Cart Table */
+        .cart-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .cart-table th, .cart-table td {
+            padding: 15px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .cart-table th {
+            background-color: #f7f7f7;
+        }
+
+        .cart-actions {
+            text-align: right;
+            margin-top: 20px;
+        }
+
+        .cart-actions button {
+            padding: 10px 20px;
+            margin-left: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .btn-update {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        .btn-checkout {
+            background-color: #28a745;
+            color: #fff;
+        }
+
+        .btn-remove {
+            color: #dc3545;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-remove:hover {
+            text-decoration: underline;
+        }
+
+        .cart-summary {
+            margin-top: 20px;
+            font-size: 16px;
+            text-align: right;
+        }
+
+        .cart-summary span {
+            font-weight: bold;
+        }
+      </style>
+   </head>
+ <body>
+      <!-- header section start -->
+      <div class="header_section">
+         <div class="container-fluid">
+         <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="logo"><a href="index.html"><img src="images/cs.png" style="width: 70px; height:auto;"></a></div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+               <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+               <ul class="navbar-nav ml-auto">
+                  <li class="nav-item active">
+                     <a class="nav-link" href="index.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="about.html">About Us</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="gallery.html">Menu</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="services.html">Special Offer</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="contact.html">Contact Us</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="cart.html">Cart</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
+                  </li>
+               </ul>
+            </div>
+         </nav>
+        </div>
+     </div>
+     <!--header section end -->
+     
+     <!-- Cart Container -->
+     <div class="container">
+        <h1>Your Shopping Cart</h1>
+        <table class="cart-table">
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Total</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="cart-items">
+                <!-- Cart items will be rendered here -->
+            </tbody>
+        </table>
+
+        <div class="cart-summary">
+            Total: $<span id="cart-total">0.00</span>
+        </div>
+
+        <div class="cart-actions">
+            <button class="btn-checkout" onclick="checkout()">Checkout</button>
+        </div>
+    </div>
+      
+
+     
+
+     <!--Script-->
+     <script>
+        // Cart array to store added items, retrieve from localStorage if available
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        let total = 0;
+    
+        // Function to render the cart and display the total price
+        function renderCart() {
+            const cartItemsElement = document.getElementById('cart-items');
+            const cartTotalElement = document.getElementById('cart-total');
+            cartItemsElement.innerHTML = ''; // Clear the cart items table
+            total = 0; // Reset the total to 0
+    
+            // Loop through each cart item and calculate the total
+            cart.forEach((item, index) => {
+                const itemTotal = item.quantity * item.price; // Calculate total for each item
+                total += itemTotal; // Add to the total cart price
+    
+                // Create a row for each cart item
+                const row = `
+                    <tr>
+                        <td>${item.name}</td>
+                        <td>${item.quantity}</td>
+                        <td>$${item.price.toFixed(2)}</td>
+                        <td>$${itemTotal.toFixed(2)}</td>
+                        <td><button class="btn-remove" onclick="removeItem(${index})">Remove</button></td>
+                    </tr>
+                `;
+                cartItemsElement.innerHTML += row; // Append the row to the cart items table
+            });
+    
+            // Display the total price in the cart total element
+            cartTotalElement.textContent = total.toFixed(2);
+    
+            // Save the total to localStorage for use on the payment page
+            localStorage.setItem('cartTotal', total.toFixed(2));
+        }
+    
+        // Function to remove an item from the cart
+        function removeItem(index) {
+            cart.splice(index, 1); // Remove the item from the cart array
+            saveCart(); // Save the updated cart to localStorage
+            renderCart(); // Re-render the cart
+        }
+    
+        // Function to handle the checkout process
+        function checkout() {
+            if (cart.length === 0) {
+                // Redirect to the empty cart page if the cart is empty
+                window.location.href = "empty.html";
+                return;
+            }
+    
+            // Save the cart to localStorage before proceeding to checkout
+            saveCart();
+    
+            // Redirect to the payment page
+            window.location.href = "payment.html";
+        }
+    
+        // Function to save the cart to localStorage
+        function saveCart() {
+            localStorage.setItem('cart', JSON.stringify(cart));
+        }
+    
+        // When the DOM is loaded, render the cart
+        document.addEventListener('DOMContentLoaded', renderCart);
+    
+        // Navigation handling for links (optional)
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(event) {
+                event.preventDefault();  // Prevent default link behavior
+                const targetPage = link.getAttribute('href');
+                window.location.href = targetPage; // Navigate to the target page
+            });
+        });
+     </script>
+     <!-- End Script -->
+
+     <!-- footer section start -->
+     <div class="footer_section layout_padding">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-3 col-sm-6">
+               <h3 class="useful_text">About</h3>
+               <p class="footer_text">City Sweet - Kferhata, Zgharta On December 14, 2006, City Sweet opened its doors in Kferhata, Zgharta, bringing a fresh and vibrant take on dessert culture to the area. Known for its wide variety of high-quality sweets, this cozy shop quickly became a favorite spot for locals and visitors alike.</p>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+               <h3 class="useful_text">Option</h3>
+               <div class="footer_menu">
+                  <ul>
+                     <li><a href="index.html">Home</a></li>
+                     <li><a href="about.html">About Us</a></li>
+                     <li><a href="gallery.html">Menu</a></li>
+                     <li><a href="services.html">Special Offer</a></li>
+                     <li><a href="contact.html">Contact Us</a></li>
+                  </ul>
+               </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+               <h1 class="useful_text">Useful Link</h1>
+               <div class="footer_menu">
+                  <li><a href="https://www.instagram.com/citysweetcs?igsh=d3kxcTQ1bTM4a2dy">Instagram</a></li>
+               <li><a href="https://www.facebook.com/citysweet.csweet.1?mibextid=JRoKGi">Facebook</a></li>
+               </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+               <h1 class="useful_text">Contact Us</h1>
+               <div class="location_text">
+                  <ul>
+                     <li>
+                        <a href="#">
+                        <i class="fa fa-map-marker" aria-hidden="true"></i><span class="padding_left_10">Address : Kferhata-zgharta</span>
+                        </a>
+                     </li>
+                     <li>
+                        <a href="#">
+                        <i class="fa fa-phone" aria-hidden="true"></i><span class="padding_left_10">Call : +01 1234567890</span>
+                        </a>
+                     </li>
+                     <li>
+                        <a href="#">
+                        <i class="fa fa-envelope" aria-hidden="true"></i><span class="padding_left_10">Email : citysweet@gmail.com</span>
+                        </a>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </div>
+      </div>
+      <!-- footer section end -->
+
+      <!-- copyright section start -->
+     <div class="copyright_section">
+        <div class="container">
+           <p class="copyright_text">Design By <a href="https://html.design">Nazir Obeid</a></p>
+        </div>
+     </div>
+     <!-- copyright section end -->
+</body>
+</html>

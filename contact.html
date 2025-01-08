@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <!-- basic -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- mobile metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <!-- site metas -->
+      <title>Contact</title>
+      <meta name="keywords" content="">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <!-- bootstrap css -->
+      <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+      <!-- style css -->
+      <link rel="stylesheet" type="text/css" href="css/style.css">
+      <!-- Responsive-->
+      <link rel="stylesheet" href="css/responsive.css">
+      <!-- fevicon -->
+      <link rel="icon" href="images/fevicon.png" type="image/gif" />
+      <!-- Scrollbar Custom CSS -->
+      <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+      <!-- Tweaks for older IEs-->
+      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+      <!-- owl stylesheets --> 
+      <link rel="stylesheet" href="css/owl.carousel.min.css">
+      <link rel="stylesheet" href="css/owl.theme.default.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+      <link rel="stylesheet" href="css/font-awesome.min.css">
+      <link rel="stylesheet" href="css/swiper.min.css">
+      <link rel="icon" href="images/fevicon.png" type="image/png" />
+      <style>
+      #chatbox {
+         position: fixed;
+         bottom: 20px;
+         right: 20px;
+         width: 300px;
+         background-color: #fff;
+         border: 1px solid #ddd;
+         border-radius: 8px;
+         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+         font-family: Arial, sans-serif;
+         z-index: 1000;
+         display: flex;
+         flex-direction: column;
+     }
+
+     #chat-header {
+         background-color: #007bff;
+         color: #fff;
+         padding: 10px;
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         border-top-left-radius: 8px;
+         border-top-right-radius: 8px;
+         font-weight: bold;
+     }
+
+     #chat-header button {
+         background: none;
+         border: none;
+         color: #fff;
+         font-size: 18px;
+         cursor: pointer;
+     }
+
+     #chat-content {
+         padding: 10px;
+         height: 200px;
+         overflow-y: auto;
+         font-size: 14px;
+     }
+
+     #chat-input {
+         display: flex;
+         padding: 10px;
+         border-top: 1px solid #ddd;
+     }
+
+     #chat-input input {
+         flex: 1;
+         padding: 10px;
+         border: 1px solid #ddd;
+         border-radius: 4px;
+         font-size: 14px;
+         margin-right: 10px;
+     }
+
+     #chat-input button {
+         background-color: #007bff;
+         color: #fff;
+         border: none;
+         padding: 10px 20px;
+         border-radius: 4px;
+         cursor: pointer;
+     }
+
+     #chat-input button:hover {
+         background-color: #0056b3;
+     }
+
+     #reopen-chat {
+         position: fixed;
+         bottom: 20px;
+         right: 20px;
+         background-color: #007bff;
+         color: #fff;
+         border: none;
+         border-radius: 50%;
+         width: 50px;
+         height: 50px;
+         display: none; /* Initially hidden */
+         justify-content: center;
+         align-items: center;
+         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+         cursor: pointer;
+         font-size: 18px;
+         z-index: 1001;
+     }
+
+     #reopen-chat:hover {
+         background-color: #0056b3;
+     }
+     .main_bt {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.main_bt:hover {
+    background-color: #0056b3;
+    text-decoration: none;
+}
+ </style>
+   </head>
+   <body>
+      <!--header section start -->
+      <div class="header_section">
+         <div class="container-fluid">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+               <div class="logo"><a href="index.html"><img src="images/cs.png" style="width: 70px; ; height:auto ;"></a></div>
+               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"aria-expanded="false" aria-label="Toggle navigation">
+               <span class="navbar-toggler-icon"></span>
+               </button>
+               <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav ml-auto">
+                     <li class="nav-item active">
+                        <a class="nav-link" href="index.html">Home</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Us</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="gallery.html">Menu</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="services.html">Special Offer</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact Us</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="cart.html">Cart</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
+                     </li>
+                  </ul>
+               </div>
+            </nav>
+         </div>
+      </div>
+      <!--header section end -->
+      <!-- contact section start -->
+ 
+     <script src="script.js"></script>
+
+      <div class="contact_section layout_padding">
+         <div class="container">
+            <h1 class="contact_text">Contact Us</h1>
+         </div>
+      </div>
+      <div class="contact_section_2 layout_padding">
+         <div class="container-fluid">
+            <div class="row">
+               <div class="col-md-6 padding_0">
+                  <div class="mail_section">
+                     <div class="email_text">
+                        <div class="form-group">
+                           <input type="text" class="email-bt" placeholder="Name" name="Email">
+                        </div>
+                        <div class="form-group">
+                           <input type="text" class="email-bt" placeholder="Email" name="Email">
+                        </div>
+                        <div class="form-group">
+                           <input type="text" class="email-bt" placeholder="Phone Number" name="Email">
+                        </div>
+                        <div class="form-group">
+                           <textarea class="massage-bt" placeholder="Message" rows="5" id="comment" name="Massage"></textarea>
+                        </div>
+                        <div class="send_btn">
+                           <button type="button" class="main_bt" onclick="handleSubmit()">SEND</button>
+                       </div>
+                     </div>
+                  </div>
+               </div>
+               <!-- Chatbox section starts here -->
+               <div id="chatbox">
+                  <div id="chat-header">
+                      <span>Chat with us!</span>
+                      <button id="close-chat" onclick="toggleChat()">×</button>
+                  </div>
+                  <div id="chat-content">
+                      <p>Welcome! How can we help you?</p>
+                  </div>
+                  <div id="chat-input">
+                      <input type="text" id="message" placeholder="Type your message here...">
+                      <button onclick="sendMessage()">Send</button>
+                  </div>
+              </div>
+          
+              <!-- Reopen Button -->
+              <button id="reopen-chat" onclick="toggleChat()">+</button>
+               <!-- Chatbox section ends here -->
+            </div>
+         </div>
+      </div>
+      <!-- contact section end -->
+     <!-- footer section start -->
+     <div class="footer_section layout_padding">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-3 col-sm-6">
+               <h3 class="useful_text">About</h3>
+               <p class="footer_text">City Sweet - Kferhata, Zgharta On December 14, 2006, City Sweet opened its doors in Kferhata, Zgharta, bringing a fresh and vibrant take on dessert culture to the area. Known for its wide variety of high-quality sweets, this cozy shop quickly became a favorite spot for locals and visitors alike.</p>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+               <h3 class="useful_text">Option</h3>
+               <div class="footer_menu">
+                  <ul>
+                     <li><a href="index.html">Home</a></li>
+                     <li><a href="about.html">About Us</a></li>
+                     <li><a href="gallery.html">Menu</a></li>
+                     <li><a href="services.html">Special Offer</a></li>
+                     <li><a href="contact.html">Contact Us</a></li>
+                  </ul>
+               </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+               <h1 class="useful_text">Useful Link</h1>
+               <div class="footer_menu">
+                  <li><a href="https://www.instagram.com/citysweetcs?igsh=d3kxcTQ1bTM4a2dy">Instagram</a></li>
+               <li><a href="https://www.facebook.com/citysweet.csweet.1?mibextid=JRoKGi">Facebook</a></li>
+               </div>
+            
+            </div>
+            <div class="col-lg-3 col-sm-6">
+               <h1 class="useful_text">Contact Us</h1>
+               <div class="location_text">
+                  <ul>
+                     <li>
+                        <a href="#">
+                        <i class="fa fa-map-marker" aria-hidden="true"></i><span class="padding_left_10">Address : Kferhata-zgharta</span>
+                        </a>
+                     </li>
+                     <li>
+                        <a href="#">
+                        <i class="fa fa-phone" aria-hidden="true"></i><span class="padding_left_10">Call : +01 1234567890</span>
+                        </a>
+                     </li>
+                     <li>
+                        <a href="#">
+                        <i class="fa fa-envelope" aria-hidden="true"></i><span class="padding_left_10">Email : citysweet@gmail.com</span>
+                        </a>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- footer section end -->
+      <!-- copyright section start -->
+      <div class="copyright_section">
+         <div class="container">
+            <p class="copyright_text">Design By <a href="https://html.design">Nazir Obeid</a></p>
+         </div>
+      </div>
+      <!-- copyright section end -->
+      <!-- Javascript files-->
+      <script src="js/jquery.min.js"></script>
+      <script src="js/popper.min.js"></script>
+      <script src="js/bootstrap.bundle.min.js"></script>
+      <script src="js/jquery-3.0.0.min.js"></script>
+      <script src="js/plugin.js"></script>
+      <script src="js/script.js"></script>
+      <!-- sidebar -->
+      <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+      <script src="js/custom.js"></script>
+      <script>
+         function toggleChat() {
+             const chatbox = document.getElementById('chatbox');
+             const reopenButton = document.getElementById('reopen-chat');
+ 
+             if (chatbox.style.display === 'none') {
+                 chatbox.style.display = 'flex';
+                 reopenButton.style.display = 'none';
+             } else {
+                 chatbox.style.display = 'none';
+                 reopenButton.style.display = 'flex';
+             }
+         }
+ 
+         function sendMessage() {
+             const input = document.getElementById('message');
+             const chatContent = document.getElementById('chat-content');
+ 
+             if (input.value.trim()) {
+                 const userMessage = document.createElement('p');
+                 userMessage.textContent = `You: ${input.value}`;
+                 chatContent.appendChild(userMessage);
+ 
+                 if (input.value.toLowerCase() === 'hello') {
+                     const reply = document.createElement('p');
+                     reply.textContent = 'Support: Welcome to City Sweet shop!';
+                     chatContent.appendChild(reply);
+                 } else if (input.value.toLowerCase() === 'menu') {
+                     const reply = document.createElement('p');
+                     reply.textContent = 'Support: All items like knafeh, maamul, znud set, croissant, mafruke, karabij.';
+                     chatContent.appendChild(reply);
+                 } else if (input.value.toLowerCase() === 'about') {
+                     const reply = document.createElement('p');
+                     reply.textContent = 'Support: City Sweet - Kferhata, Zgharta. On December 14, 2006, City Sweet opened its doors in Kferhata, Zgharta, bringing a fresh and vibrant take on dessert culture to the area.';
+                     chatContent.appendChild(reply);
+                 } else if (input.value.toLowerCase() === 'offer') {
+                     const reply = document.createElement('p');
+                     reply.innerHTML = 'Support: <a href="services.html">Check out our special offers here.</a>';
+                     chatContent.appendChild(reply);
+                 }
+ 
+                 input.value = '';
+                 chatContent.scrollTop = chatContent.scrollHeight; // Auto-scroll to the bottom
+             }
+         }
+         function handleSubmit() {
+    // Get input values
+    const name = document.querySelector('input[placeholder="Name"]').value.trim();
+    const email = document.querySelector('input[placeholder="Email"]').value.trim();
+    const phone = document.querySelector('input[placeholder="Phone Number"]').value.trim();
+    const message = document.querySelector('textarea[placeholder="Message"]').value.trim();
+
+    // Validate inputs
+    if (!name || !email || !phone || !message) {
+        alert("Please fill out all fields before submitting.");
+        return;
+    }
+
+    // Simple email validation (optional, for demonstration)
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+        alert("Please enter a valid email address.");
+        return;
+    }
+
+    // Redirect to confirmation page
+    window.location.href = "confirmation.html";
+}
+     </script>
+
+   </body>
+</html>
